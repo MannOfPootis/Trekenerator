@@ -29,19 +29,56 @@
                 case "location":
                     echo "ligmaballs";
                     $name=$_GET["name"];
-                    $allL=$conn->query("SELECT*
-                        from location
-                        WHERE name=$name");
-                   // $row = mysql_fetch_row($res);
-                    while($location=mysqli_fetch_array(
-                        
-                        $allL,MYSQLI_ASSOC))
-                        {
-                            $locationName=$location["name"];
-                            echo "$locationName";
                     
-                    }
-                    break;
+                   // $row = mysql_fetch_row($res);
+                   $allPlaces=$conn->query("SELECT* from location WHERE name='$name' ");
+                   $sus=0;
+                   while($place = mysqli_fetch_array(
+                       $allPlaces,MYSQLI_ASSOC)){
+                           $placeName=$place["name"];
+                           $placeId=$place["id"];
+                           if(isset($place["comment"])){
+                           $placeComment=$place["comment"];}
+                           else{
+                            $placeComment= "none";
+                           }
+                           echo "<div
+                           class = '' id='$placeId'>
+                               $placeName is the name<br>
+                               $placeId is the id<br>
+                               $placeComment is the comment<br>
+
+                           </div>";
+                   
+                       }break;
+                case "path":
+                    echo "ligmaballs";
+                    $name=$_GET["name"];
+                    
+                   // $row = mysql_fetch_row($res);
+                   $allPlaces=$conn->query("SELECT* from path WHERE name='$name' ");
+                   $sus=0;
+                   while($place = mysqli_fetch_array(
+                       $allPlaces,MYSQLI_ASSOC)){
+                           $placeName=$place["name"];
+                           $placeId=$place["id"];
+                           $placeStart=$place["location1"];
+                           $placeEnd=$place["location2"];
+                           if(isset($place["comment"])){
+                           $placeComment=$place["comment"];}
+                           else{
+                            $placeComment= "none";
+                           }
+                           echo "<div
+                           class = '' id='$placeId'>
+                               $placeName is the name
+                               $placeId is the id
+                               $placecomment is the comment
+
+
+                           </div>";
+                   
+                       }break;
             }
         }
     ?>

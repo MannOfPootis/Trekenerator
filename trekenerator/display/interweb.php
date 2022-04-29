@@ -81,7 +81,7 @@ while($place = mysqli_fetch_array(
         left: $randx%;
         top: $randy%' 
         class = '' id='$placeId'>
-            <a href='http://localhost/trekenerator/display/info.php?thing=location&name=$placeName'>
+            <a href='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&name=$placeName'>
                 $placeName
             </a>
         </div>";//TO DO: add math to calc angles

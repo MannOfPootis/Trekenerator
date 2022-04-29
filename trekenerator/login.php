@@ -37,8 +37,8 @@ password:   <input type="password" name="password"><br>
 <input type="submit">
 
 </form>
-<a href="http://localhost/trekenerator/signup.php">go to signup </a><br>
-<a href="http://localhost/trekenerator/mainPage.php">back home</a>
+<a href="http://localhost/trekenerator/trekenator/signup.php">go to signup </a><br>
+<a href="http://localhost/trekenerator/trekenator/mainPage.php">back home</a>
 
 
 

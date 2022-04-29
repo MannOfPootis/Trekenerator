@@ -74,8 +74,8 @@ Password again<input type = "password" name="password2" id ="password1" onchange
 <div id ="problem"></div>
 </div>
 </form>
-<a href="http://localhost/trekenerator/login.php">go to login </a>
-<a href="http://localhost/trekenerator/mainPage.php">main page</a>
+<a href="http://localhost/trekenerator/trekenerator/login.php">go to login </a>
+<a href="http://localhost/trekenerator/trekenerator/mainPage.php">main page</a>
 
 </body>
 </html>
