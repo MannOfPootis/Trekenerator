@@ -56,7 +56,7 @@
                     $name=$_GET["name"];
                     
                    // $row = mysql_fetch_row($res);
-                   $allPlaces=$conn->query("SELECT* from path WHERE name='$name' ");
+                   $allPlaces=$conn->query("SELECT* from path  WHERE name='$name' ");
                    $sus=0;
                    while($place = mysqli_fetch_array(
                        $allPlaces,MYSQLI_ASSOC)){
@@ -64,16 +64,20 @@
                            $placeId=$place["id"];
                            $placeStart=$place["location1"];
                            $placeEnd=$place["location2"];
-                           if(isset($place["comment"])){
+                           
+                           if(strlen($place["comment"])>2){
                            $placeComment=$place["comment"];}
                            else{
                             $placeComment= "none";
                            }
                            echo "<div
                            class = '' id='$placeId'>
-                               $placeName is the name
-                               $placeId is the id
-                               $placecomment is the comment
+                               $placeName is the name <br>
+                               $placeId is the id<br>
+                               $placeStart is where you start<br>
+                               $placeEnd is where you end<br>
+                               $placeComment is the comment<br>
+                               
 
 
                            </div>";

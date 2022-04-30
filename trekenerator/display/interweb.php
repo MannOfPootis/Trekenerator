@@ -10,8 +10,8 @@
             }
         </style> 
         <script>
-            function connect(div1, div2, color, thickness) {
-    var off1 = getOffset(div1);
+            function connect(div1, div2, color, thickness,name) {//this javascript code is from  the web note to make it in php and ore use this:https://web.archive.org/web/20130108020533/http://blog.stephenboak.com:80/2012/06/15/d3-flow-vis-tutorial.html
+    var off1 = getOffset(div1);//the code was shamelessly nicked from https://thewebdev.info/2021/09/12/how-to-draw-a-line-between-two-divs-with-javascript/
     var off2 = getOffset(div2);
     // bottom right
     var x1 = off1.left + off1.width;
@@ -27,11 +27,11 @@
     // angle
     var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
     // make hr
-    var htmlLine = "<div style='padding:0px; margin:0px; height:" + thickness +
+    var htmlLine = "<a  href=http://localhost/trekenerator/trekenerator/display/info.php?thing=path&name="+ name+"><div style='padding:0px; margin:0px; height:" + thickness +
      "px; background-color:" + color +
       "; line-height:1px; position:absolute; left:" + cx + 
       "px; top:" + cy + 
-      "px; width:" + length +"px; -moz-transform:rotate(" + angle + "deg);-webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' />";
+      "px; width:" + length +"px; -moz-transform:rotate(" + angle + "deg);-webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' ><div/></a>";
     //
     //alert(htmlLine);
     document.body.innerHTML += htmlLine; 
@@ -52,10 +52,10 @@ window.testIt = function() {
     var div2 = document.getElementById('1');
     connect(div1, div2, "#0F0", 10);
 }
-window.testI = function(k,l) {
+window.testI = function(k,l,name) {
     var div1 = document.getElementById(k);
     var div2 = document.getElementById(l);
-    connect(div1, div2, "#0F0", 1);
+    connect(div1, div2, "#0F0", 10,name);
 }
 
 
@@ -95,7 +95,8 @@ while($place = mysqli_fetch_array(
         {
             $start=$path["location1"];
             $end=$path["location2"];
-            echo"<script>testI('$start','$end');</script>";
+            $name = $path["name"];
+            echo"<script>testI('$start','$end',$name);</script>";
            // echo"<h1>wuss</h1>";
         }
     

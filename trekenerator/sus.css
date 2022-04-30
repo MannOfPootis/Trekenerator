@@ -29,3 +29,7 @@
      border-width: 1vh;
      border-radius: 10%;
 }
+a{
+    height: max-content;
+    width:max-content; 
+}
