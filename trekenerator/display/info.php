@@ -22,16 +22,17 @@
         <?php
         include "../check/config.php";
         include "../check/login.php";
-        if(isset($_GET["thing"])&&isset($_GET["name"])){
-    
-            switch ($_GET["thing"]) 
+        if(isset($_GET["thing"])&&isset($_GET["ID"])){
+            $ID=$_GET["ID"];
+            $topic =$_GET["thing"];
+            switch ($topic) 
             {
                 case "location":
-                    echo "ligmaballs";
-                    $name=$_GET["name"];
+                    
+                    
                     
                    // $row = mysql_fetch_row($res);
-                   $allPlaces=$conn->query("SELECT* from location WHERE name='$name' ");
+                   $allPlaces=$conn->query("SELECT* from location WHERE id='$ID' ");
                    $sus=0;
                    while($place = mysqli_fetch_array(
                        $allPlaces,MYSQLI_ASSOC)){
@@ -52,8 +53,8 @@
                    
                        }break;
                 case "path":
-                    echo "ligmaballs";
-                    $name=$_GET["name"];
+                    
+                    
                     
                    // $row = mysql_fetch_row($res);
                    $allPlaces=$conn->query("SELECT* from path  WHERE name='$name' ");
@@ -85,6 +86,18 @@
                        }break;
             }
         }
+        include "../commenting/commentPath.php";
+        $comments=$conn->query("SELECT * from  comment where topic ='$topic' and towards = '$ID'");
+        while($comment= mysqli_fetch_array(
+            $comments,MYSQLI_ASSOC)){
+                $posterId=$comment["poster"];
+                $text =$comment["text"];
+                //$towards
+                //$topic=
+                $postername= sqli_takefirst($conn->query("SELECT username from account where id = '$posterId'"));
+                echo"<div>$postername says: $text </div>";
+            }
+
     ?>
     </body>
 

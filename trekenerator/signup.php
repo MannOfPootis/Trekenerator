@@ -45,7 +45,6 @@ echo "hello world";
                 width: fit-content;
             }
         </style>
-
     </head>
 <body>
     <script type="text/javascript">
