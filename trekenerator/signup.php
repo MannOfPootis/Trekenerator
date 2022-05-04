@@ -15,7 +15,7 @@ echo "hello world";
         $firstname=$_POST["first_name"];
         $lastname=$_POST["last_name"];
         $username=$_POST["username"];
-        $password=$_POST["password"];
+        $password=password_hash($_POST["password"],PASSWORD_DEFAULT);
         if($conn->query("select username from account where username='$username'")->num_rows>0)
         {
             echo "<br>wrong nejm<br>";

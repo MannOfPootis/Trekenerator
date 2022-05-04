@@ -17,6 +17,7 @@ session_start();
 
 <?php
 include "check/config.php";
+include "methods.php";
 if(
     array_key_exists( "username",$_POST)&&
     array_key_exists( "password",$_POST)
@@ -24,7 +25,8 @@ if(
     {
         $username=$_POST["username"];
         $password=$_POST["password"];
-        if($conn->query("select username from account where username='$username' and password='$password'")->num_rows>0)
+        $gotten_password=sqli_takefirst($conn->query("SELECT password from account where username ='$username'"));
+        if(password_verify($password, $gotten_password))
         {
             echo "it should work";
             $_SESSION["username"]=$username;
