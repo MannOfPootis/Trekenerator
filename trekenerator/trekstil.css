@@ -1,15 +1,39 @@
 
 .nav{
-     flex-wrap: wrap;
-     width:100vw;
-     justify-content: space-around;
+     position: sticky;
+     top:0px;
+     background-color: brown;
+      z-index: 3;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
 .borderp
 {
 margin: -2%;
 padding: 2%;
-border-bottom:5px solid black;
+border-top:5px solid black;
 }
 form{
   background-color: rgba(16,16,16,0.3);
@@ -30,15 +54,19 @@ form{
      background-size: cover;
      height: 200vh;
 }
+.locationBackground
+{
+  background-image:url('images/background location.jpg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 200vh;
+}
 .backStil{
 
 }
 
-.nav{
-     width:100%;
-     justify-content: space-between;
-     list-style: none;
-}
 .window{
      position:relative;
      top:50%;
@@ -48,27 +76,17 @@ form{
 }
 
 .loc{
-     background: black;
-  padding: 5px;
-  width: 200px;
-  height: 150px;
-  margin-top: 10px;
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+
 }
 .logout{
-     padding:1vh;
-     border-style: inset;
-     background-color:black ;
-     font-size: larger;
-     color: white;
+  background-color: rgba(16,16,16,0.3);
 
-     border-color:red;
-     border-width: 1vh;
-     border-radius: 10%;
+  width:wrap-content ;
+  height: max-content;
+  width:max-content;
+  padding:2%;
+  margin:auto;
+
 }
 a{
     height: max-content;
@@ -86,4 +104,10 @@ font-weight: bold;
 font-size: 3em;
 text-align: center;
 
+}
+.navbar{
+
+}
+.account{
+  float:right;
 }

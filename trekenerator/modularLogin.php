@@ -48,18 +48,21 @@ if(
 if( !array_key_exists( "username",$_SESSION)){
 echo'
 <form action="" method="post">
+
+Please log in<br><br>
 <div class="borderp">
-Please log in <br><br>
 username:<br> <input type="text" name="username"><br>
 password:<br>   <input type="password" name="password"><br>
 <input type="submit" value="login">
 </div>
 </form>
-<h2><a href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
+<h2  ><a style="color:white;" href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
 
 ';}
 
 ?>
+<h2>Why the name "Trekenerator"</h2>
+<p>the name trekenerator comes form the fact that this website's goal it to generate treks automaticaly thus the name "trekenerator"</p>
 
 </body>
 </html>

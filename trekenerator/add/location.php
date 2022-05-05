@@ -20,7 +20,7 @@ if(array_key_exists("name",$_POST))
         $height = -100;
     }
 
-    
+
     if(array_key_exists("comment",$_POST))
     {
         $comment= $_POST["comment"];
@@ -29,7 +29,7 @@ if(array_key_exists("name",$_POST))
     {
         $comment = "0";
     }
-    
+
     echo "$poster";
     if($conn->query("SELECT name from location where name='$name'")->num_rows>0)
         {
@@ -39,24 +39,28 @@ if(array_key_exists("name",$_POST))
             $conn->query("INSERT INTO location(name, height,poster,comment)
                                     Values ('$name','$height','$poster','$comment')");
         }
-    
+
     //$sql = "INSERT INTO account(name  ,height  ,poster   ,password)
      //   values('$firstname','$lastname','$username','$password')";
 }
 ?>
 <html>
+<head>
+    <link rel="stylesheet" href="../trekstil.css">
+
+</head>
 <body>
 
-<h1>add a location</h1>
-<a href="http://localhost/trekenerator/trekenerator/signup.php">go to signup </a>
-<a href="http://localhost/trekenerator/trekenerator/mainPage.php">gsag</a>
-
+<div class ="locationBackground">
 <form action =""method ="post">
-    name:<input type="text" name="name"><br>
-    Height above sea level:<input type="text" name="height"><br>
-    any comments?:<input type="text" name="comment"><br>
-    <input type ="submit">
-</form>
 
+  <h2>Add a location</h2>
+    name:<br><input type="text" name="name"><br>
+    Height above sea level:<br><input type="text" name="height"><br>
+    any comments?:<br><input type="text" name="comment"><br>
+    <input type ="submit">
+
+</form>
+<div>
 </body>
 </html>
