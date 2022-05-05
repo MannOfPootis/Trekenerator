@@ -2,8 +2,24 @@
 .nav{
      flex-wrap: wrap;
      width:100vw;
-     justify-content: space-around;    
-       
+     justify-content: space-around;
+
+}
+.borderp
+{
+margin: -2%;
+padding: 2%;
+border-bottom:5px solid black;
+}
+form{
+  background-color: rgba(16,16,16,0.3);
+
+  width:wrap-content ;
+  height: max-content;
+  width:max-content;
+  padding:2%;
+  margin:auto;
+
 }
 .mainBackground{
      background-image:url('images/background1.jpg');
@@ -15,13 +31,12 @@
      height: 200vh;
 }
 .backStil{
-     
+
 }
 
 .nav{
+     width:100%;
      justify-content: space-between;
-     padding: 0;
-     margin: 0;
      list-style: none;
 }
 .window{
@@ -29,7 +44,7 @@
      top:50%;
      width:80%;
      margin:auto;
-     background-color: #736154;
+     text-align: center;
 }
 
 .loc{
@@ -50,12 +65,25 @@
      background-color:black ;
      font-size: larger;
      color: white;
-     
+
      border-color:red;
      border-width: 1vh;
      border-radius: 10%;
 }
 a{
     height: max-content;
-    width:max-content; 
+    width:max-content;
+}
+.smallink{
+  background: black;
+padding: 5px;
+width: 10%;
+height:10%;
+margin-top: 10px;
+line-height: 150px;
+color: white;
+font-weight: bold;
+font-size: 3em;
+text-align: center;
+
 }

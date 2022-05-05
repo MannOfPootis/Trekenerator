@@ -3,13 +3,12 @@ session_start();
 ?>
 <html>
 <head>
-    <link rel="stylesheet" href="trekstil.css"> 
+    <link rel="stylesheet" href="trekstil.css">
         <style>
-            
+
             form{
-                background-color:gray;
                 width: fit-content;
-                
+
                 border-width:100px;
             }
         </style>
@@ -30,7 +29,7 @@ if(
         $gotten_password=sqli_takefirst($conn->query("SELECT password from account where username ='$username'"));
         if(password_verify($password, $gotten_password))
         {
-            echo "it should work";
+            //echo "it should work";
             $_SESSION["username"]=$username;
 
         }
@@ -44,20 +43,23 @@ if(
 ?>
 
 <br>
-<?php
 
+<?php
 if( !array_key_exists( "username",$_SESSION)){
 echo'
-please log in
 <form action="" method="post">
-username: <input type="text" name="username"><br>
-password:   <input type="password" name="password"><br>
+<div class="borderp">
+Please log in <br><br>
+username:<br> <input type="text" name="username"><br>
+password:<br>   <input type="password" name="password"><br>
 <input type="submit" value="login">
-';}
-else{echo "you are loged in";}
-?>
-<a href="http://localhost/trekenerator/trekenerator/signup.php"> would you like to sign up</a>
-
+</div>
 </form>
+<h2><a href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
+
+';}
+
+?>
+
 </body>
 </html>

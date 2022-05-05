@@ -1,13 +1,13 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="trekstil.css"> 
+        <link rel="stylesheet" href="trekstil.css">
 
     </head>
 <body class = "backstil">
 <div class= "mainBackground">
 <div class = "window">
-<h1>welcome to the first trekenerator made by me</h1>
+<h1>Welcome to the first Trekenerator made by me</h1>
 <?php
 include "modularLogin.php";
 ?>
@@ -19,12 +19,11 @@ if (array_key_exists( "username",$_SESSION)){
 }
 ?>
 
-<div class ="nav">   
-<a class = "loc" href="http://localhost/trekenerator/trekenerator/add/location.php">ada a location</a>
-<a class = "loc" href="http://localhost/trekenerator/trekenerator/add/path.php" > add a path </a>
-<a class = "loc" href ="http://localhost/trekenerator/trekenerator/display/paths.php"> display paths</a>
-<a class = "loc" href ="http://localhost/trekenerator/trekenerator/display/trekLength.php"> trekenerate</a>
-<a class = loc href = "http://localhost/trekenerator/trekenerator/display/interweb.php">interweb</a>
+<div class ="nav">
+<a class = "loc" href="http://localhost/trekenerator/trekenerator/add/location.php">Add a location</a>
+<a class = "loc" href="http://localhost/trekenerator/trekenerator/add/path.php" > Add a path </a>
+<a class = "loc" href ="http://localhost/trekenerator/trekenerator/display/trekLength.php"> Trekenerate</a>
+<a class = loc href = "http://localhost/trekenerator/trekenerator/display/interweb.php">Interweb</a>
 
 </div>
 </div>
