@@ -52,6 +52,9 @@ if(array_key_exists("name",$_POST))
 <body>
 
 <div class ="locationBackground">
+  <div class ="window">
+  <h1>adding locations</h1>
+  <p>locations need to be added to the database so that it can function properly so.. pick a location you have been to and add it to the database. perhaps it is a hill you have been on or a town. Whatever it is fell free to add it to our ever expanding library</p>
 <form action =""method ="post">
 
   <h2>Add a location</h2>
@@ -61,6 +64,7 @@ if(array_key_exists("name",$_POST))
     <input type ="submit">
 
 </form>
+</div>
 <div>
 </body>
 </html>
