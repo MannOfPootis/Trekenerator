@@ -1,16 +1,17 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="sus.css"> 
+        <link rel="stylesheet" href="trekstil.css"> 
 
     </head>
-<body>
-
+<body class = "backstil">
+<div class= "mainBackground">
+<div class = "window">
 <h1>welcome to the first trekenerator made by me</h1>
 <?php
 include "modularLogin.php";
 ?>
-<a href="http://localhost/trekenerator/trekenerator/signup.php"> would you like to sign up</a>
+
 <br>
 <?php
 if (array_key_exists( "username",$_SESSION)){
@@ -24,8 +25,10 @@ if (array_key_exists( "username",$_SESSION)){
 <a class = "loc" href ="http://localhost/trekenerator/trekenerator/display/paths.php"> display paths</a>
 <a class = "loc" href ="http://localhost/trekenerator/trekenerator/display/trekLength.php"> trekenerate</a>
 <a class = loc href = "http://localhost/trekenerator/trekenerator/display/interweb.php">interweb</a>
-</div>
 
+</div>
+</div>
+</div>
 
 </body>
 </html>

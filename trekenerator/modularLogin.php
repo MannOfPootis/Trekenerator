@@ -3,7 +3,9 @@ session_start();
 ?>
 <html>
 <head>
+    <link rel="stylesheet" href="trekstil.css"> 
         <style>
+            
             form{
                 background-color:gray;
                 width: fit-content;
@@ -50,10 +52,11 @@ please log in
 <form action="" method="post">
 username: <input type="text" name="username"><br>
 password:   <input type="password" name="password"><br>
-<input type="submit">
+<input type="submit" value="login">
 ';}
 else{echo "you are loged in";}
 ?>
+<a href="http://localhost/trekenerator/trekenerator/signup.php"> would you like to sign up</a>
 
 </form>
 </body>

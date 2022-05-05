@@ -1,9 +1,61 @@
-.page{
-       
-}
+
 .nav{
      flex-wrap: wrap;
      width:100vw;
-     justify-content: space-around;    ¸
+     justify-content: space-around;    
        
+}
+.mainBackground{
+     background-image:url('images/background1.jpg');
+    /* background-color: green;*/
+    background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 200vh;
+}
+.backStil{
+     
+}
+
+.nav{
+     justify-content: space-between;
+     padding: 0;
+     margin: 0;
+     list-style: none;
+}
+.window{
+     position:relative;
+     top:50%;
+     width:80%;
+     margin:auto;
+     background-color: #736154;
+}
+
+.loc{
+     background: black;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+.logout{
+     padding:1vh;
+     border-style: inset;
+     background-color:black ;
+     font-size: larger;
+     color: white;
+     
+     border-color:red;
+     border-width: 1vh;
+     border-radius: 10%;
+}
+a{
+    height: max-content;
+    width:max-content; 
 }

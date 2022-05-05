@@ -49,8 +49,8 @@ if(array_key_exists("name",$_POST))
 <body>
 
 <h1>add a path</h1>
-<a href="http://localhost/trekenerator/signup.php">go to signup </a>
-<a href="http://localhost/trekenerator/mainPage.php">gsag</a>
+<a href="http://localhost/trekenerator/trekenerator/signup.php">go to signup </a>
+<a href="http://localhost/trekenerator/trekenerator/mainPage.php">gsag</a>
 
 <form action =""method ="post">
     start locaton:<select name ="location1">
