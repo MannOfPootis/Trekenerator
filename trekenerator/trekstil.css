@@ -36,7 +36,7 @@ padding: 2%;
 border-top:5px solid black;
 }
 form{
-  background-color: rgba(16,16,16,0.3);
+  background-color: rgba(255,255,255,0.3);
 
   width:wrap-content ;
   height: max-content;

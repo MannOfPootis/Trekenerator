@@ -26,10 +26,11 @@ else
   <li><a class = loc href = "http://localhost/trekenerator/trekenerator/display/interweb.php">Interweb</a></li>
 
   <li class="account">
-
+<div>
   <?php
     echo"<a href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' >$username</a>"
-  ?></li>
+  ?>
+  <div></li>
 </ul>
 
 
