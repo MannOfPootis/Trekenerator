@@ -57,7 +57,7 @@
                     
                     
                    // $row = mysql_fetch_row($res);
-                   $allPlaces=$conn->query("SELECT* from path  WHERE name='$name' ");
+                   $allPlaces=$conn->query("SELECT* from path  WHERE id='$ID' ");
                    $sus=0;
                    while($place = mysqli_fetch_array(
                        $allPlaces,MYSQLI_ASSOC)){
@@ -97,7 +97,6 @@
                 $postername= sqli_takefirst($conn->query("SELECT username from account where id = '$posterId'"));
                 echo"<div>$postername says: $text </div>";
             }
-
     ?>
     </body>
 

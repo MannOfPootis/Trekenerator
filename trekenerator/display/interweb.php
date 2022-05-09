@@ -27,7 +27,7 @@
     // angle
     var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
     // make hr
-    var htmlLine = "<a  href=http://localhost/trekenerator/trekenerator/display/info.php?thing=path&name="+ name+" style='padding:0px; margin:0px; height:" + thickness +
+    var htmlLine = "<a  href=http://localhost/trekenerator/trekenerator/display/info.php?thing=path&ID="+ name+" style='padding:0px; margin:0px; height:" + thickness +
      "px; background-color:" + color +
       "; line-height:1px; position:absolute; left:" + cx + 
       "px; top:" + cy + 
@@ -95,8 +95,8 @@ while($place = mysqli_fetch_array(
         {
             $start=$path["location1"];
             $end=$path["location2"];
-            $name = $path["name"];
-            echo"<script>testI('$start','$end',$name);</script>";
+            $ID = $path["id"];
+            echo"<script>testI('$start','$end',$ID);</script>";
            // echo"<h1>wuss</h1>";
         }
     
