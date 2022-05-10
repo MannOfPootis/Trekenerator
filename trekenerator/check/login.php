@@ -1,11 +1,19 @@
 <?php
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+$url = "https://";   
+else  
+$url = "http://";     
+$url.= $_SERVER['HTTP_HOST'];   
+$url.= $_SERVER['REQUEST_URI'];    
+
+echo $url; 
 session_start();
 if(array_key_exists("username",$_SESSION))
 {
 $username=$_SESSION["username"];
 //echo "$username";
 }
-else
+else if($url!="http://localhost/trekenerator/trekenerator/mainPage.php")
 {
 
     header("Location: http://localhost/trekenerator/trekenerator/mainPage.php");
@@ -28,7 +36,14 @@ else
   <li class="account">
 <div>
   <?php
-    echo"<a href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' >$username</a>"
+    echo"<a href = 'http://localhost/trekenerator/trekenerator/change/password.php' >susword</a>";
+  ?>
+  <div></li>
+</ul>
+<li class="account">
+<div>
+  <?php
+    echo"<a href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' >$username</a>";
   ?>
   <div></li>
 </ul>
