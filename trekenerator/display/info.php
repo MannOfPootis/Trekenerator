@@ -3,11 +3,7 @@
             <link rel="stylesheet" href="../trekstil.css">
             <style>
 
-                div{
-                    background-color:grey;
-                    margin:5px;
-                    width:fit-content;
-                }
+                
             </style> 
         <script>
 
@@ -18,20 +14,20 @@
     </head>
     <body>
 
-        <h1>welcome to the first trekenerator made by me</h1>
+        
         <?php
         include "../check/config.php";
-        include "../nav.php";
+        include "../nav.php";?>
+        <div class= "infoBackground">
+            <div class="window2">
+        
+        <?php
         if(isset($_GET["thing"])&&isset($_GET["ID"])){
             $ID=$_GET["ID"];
             $topic =$_GET["thing"];
             switch ($topic) 
             {
                 case "location":
-                    
-                    
-                    
-                   // $row = mysql_fetch_row($res);
                    $allPlaces=$conn->query("SELECT* from location WHERE id='$ID' ");
                    $sus=0;
                    while($place = mysqli_fetch_array(
@@ -45,9 +41,9 @@
                            }
                            echo "<div
                            class = '' id='$placeId'>
-                               $placeName is the name<br>
-                               $placeId is the id<br>
-                               $placeComment is the comment<br>
+                               <h1>$placeName</h1><br>
+                            <p>$placeComment</p><br>
+                               
 
                            </div>";
                    
@@ -65,6 +61,7 @@
                            $placeStart=$place["location1"];
                            $placeEnd=$place["location2"];
                            
+                           
                            if(strlen($place["comment"])>2){
                            $placeComment=$place["comment"];}
                            else{
@@ -72,12 +69,10 @@
                            }
                            echo "<div
                            class = '' id='$placeId'>
-                               $placeName is the name <br>
-                               $placeId is the id<br>
-                               $placeStart is where you start<br>
-                               $placeEnd is where you end<br>
-                               $placeComment is the comment<br>
-                               
+                               <h1>$placeName</h1><br>
+                               <p>$placeComment</p><h2>
+                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeStart'>this is the start<a> <br><br>
+                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeEnd'>this is the end<a>    </h2>                        
 
 
                            </div>";
@@ -91,12 +86,12 @@
                         $lastname=$Accray["last_name"];
                         $username=$Accray["username"];
                         if($username == $_SESSION['username']){
-                            echo'<a href="http://localhost/trekenerator/trekenerator/modularLogout.php"> logout?</a>';
+                            echo'<br><br><br><br><br><br><a href="http://localhost/trekenerator/trekenerator/modularLogout.php"> logout?</a>';
                         }
                         echo"<div>
-                        $username<br>
-                        $firstname<br>
-                        $lastname<br>
+                        <h1>$username</h1>
+                        <p>$firstname<br>
+                        $lastname</p><br>
                         <a href ='http://localhost/trekenerator/trekenerator/change/password.php'> change password?</a>
                         
                         </div>";
@@ -112,12 +107,12 @@
             $comments,MYSQLI_ASSOC)){
                 $posterId=$comment["poster"];
                 $text =$comment["text"];
-                //$towards
-                //$topic=
                 $postername= sqli_takefirst($conn->query("SELECT username from account where id = '$posterId'"));
-                echo"<div>$postername says: $text </div>";
+                echo"<p><b>$postername says:</b> $text </p>";
             }
     ?>
+    </div>
+    </div>
     </body>
 
 

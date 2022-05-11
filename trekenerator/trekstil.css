@@ -13,17 +13,23 @@ body{
 }
 h1{
   margin: auto;
+  padding:0.5em;
+  border-radius: 0.3em;
   width:fit-content;
   background-color: rgba(255,255,255,0.3);
 }
 h2{
   margin: auto;
+  padding:0.5em;
+  border-radius: 0.3em;
   width:fit-content;
   background-color: rgba(255,255,255,0.3);
 
 }
 p{
   margin: auto;
+  padding:0.5em;
+  border-radius: 0.3em;
   width:fit-content;
   background-color: rgba(255,255,255,0.3);
 }
@@ -60,7 +66,9 @@ border-top:5px solid black;
 }
 form{
   background-color: rgba(255,255,255,0.3);
-
+  margin: auto;
+  padding:0.5em;
+  border-radius: 0.3em;
   width:wrap-content ;
   height: max-content;
   width:max-content;
@@ -84,7 +92,42 @@ form{
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-   height: 200vh;
+   height: 100vh;
+}
+.pathBackground{
+  background-image:url('images/background path.jpg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+}
+.trekeneratorBackground{
+  background-image:url('images/background trekenerator.jpg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+
+}
+.grassyBackground{
+  background-image:url('images/background grassy.jpg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 100vh;
+   max-height: fit-content;
+}
+.infoBackground{
+  background-image:url('images/background info.jpg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   max-height: fit-content;
+   min-height: 100vh;
 }
 .backStil{
 
@@ -141,4 +184,7 @@ text-align: center;
 }
 .account{
   float:right;
+}
+#greenthru{
+  background-color: rgba(247, 247, 247, 0.562);
 }

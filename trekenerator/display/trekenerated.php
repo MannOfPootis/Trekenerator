@@ -23,7 +23,7 @@
         </script>
     </head>
 <body>
-
+<div class ="grassyBackground">
 <?php
 
 include "../check/config.php";
@@ -56,10 +56,12 @@ while ($allpArray=mysqli_fetch_array($allp)){
         $end = $why->location2;
         $length = $why->length;
         $real+= $length;
+        $nameStart=sqli_takefirst($conn->query("SELECT name FROM location where id ='$start'"));
+        $nameEnd=sqli_takefirst($conn->query("SELECT name FROM location where id ='$end'"));
         //$end=$path[$dex]->fetch_object()->location2;
         //$startName=$path[$dex]->fetch_object()->comment;
         echo "<br>
-        <p>we start at <i>$start</i> for $length m  and end at <i>$end</i>";
+        <p>we start at <i>$nameStart</i> for $length m  and end at <i>$nameEnd</i></p><br>";
         $sum+=$length;
         //$start = 5;
         $dex++;
@@ -83,7 +85,7 @@ while ($allpArray=mysqli_fetch_array($allp)){
     
     }*/
 ?>
-
+</div>
 
 </form>
 </body>

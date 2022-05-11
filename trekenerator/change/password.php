@@ -1,10 +1,46 @@
+
+<html>
+    <head>
+    <link rel="stylesheet" href="../trekstil.css">
+        <style>
+            
+        </style>
+    </head>
+<body>
+    <script type="text/javascript">
+        //function submitcheck
+        function checkok(){
+            var password = document.getElementById("password");
+            var password1 = document.getElementById("password1");
+            if(password.value!=(password1.value)){
+                document.getElementById("problem").innerHTML="ligmaballs";
+            }
+            else{
+                document.getElementById("problem").innerHTML="isok";
+            }
+            //document.getElementById("problem").innerHTML=password.value;
+        }
+    </script>
 <?php
 //session_start();
 include "../check/config.php";
-include "../check/login.php";
-include "../methods.php";
+include "../nav.php";
+//include "../methods.php";
 
-    if(
+?>
+<div class = "trekeneratorBackground">
+    <div class="window2">
+        <h1>this is where you change your password</h2>
+<form action="" method="post">
+
+original Password<input type="password" name="originalPassword"><br>
+Password<input type="password" name="password"id ="password" onchange="checkok()"><br>
+Password again<input type = "password" name="password2" id ="password1" onchange="checkok()">
+
+<input type="submit" >
+<div id ="problem"></div>
+</form>
+<?php    if(
     array_key_exists( "originalPassword",$_POST)&&
     array_key_exists( "password",$_POST)&&
     array_key_exists( "password2",$_POST) 
@@ -27,43 +63,7 @@ include "../methods.php";
     }
 
 ?>
-<html>
-    <head>
-        <style>
-            form{
-                background-color:gray;
-                width: fit-content;
-            }
-        </style>
-    </head>
-<body>
-    <script type="text/javascript">
-        //function submitcheck
-        function checkok(){
-            var password = document.getElementById("password");
-            var password1 = document.getElementById("password1");
-            if(password.value!=(password1.value)){
-                document.getElementById("problem").innerHTML="ligmaballs";
-            }
-            else{
-                document.getElementById("problem").innerHTML="isok";
-            }
-            //document.getElementById("problem").innerHTML=password.value;
-        }
-    </script>
-<div class = "box">
-<form action="" method="post">
-
-original Password<input type="password" name="originalPassword"><br>
-Password<input type="password" name="password"id ="password" onchange="checkok()"><br>
-Password again<input type = "password" name="password2" id ="password1" onchange="checkok()">
-
-<input type="submit" >
-<div id ="problem"></div>
 </div>
-</form>
-<a href="http://localhost/trekenerator/trekenerator/login.php">go to login </a>
-<a href="http://localhost/trekenerator/trekenerator/mainPage.php">main page</a>
-
+</div>
 </body>
 </html>

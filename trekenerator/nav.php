@@ -50,7 +50,7 @@
   if (isset($_SESSION['username'])){
     $username =$_SESSION['username'];session_abort();
     $placeId= sqli_takefirst($conn->query("SELECT ID from account WHERE username ='$username'"));
-    echo"<a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=account&ID=$placeId'>asdashdahh</a>";
+    echo"<a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=account&ID=$placeId'>$username</a>";
   }
   
   

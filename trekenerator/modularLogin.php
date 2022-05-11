@@ -31,11 +31,13 @@ if(
         {
             //echo "it should work";
             $_SESSION["username"]=$username;
+            header('Refresh: 0');
 
         }
         else{
             echo "<p>bad login boyo</p>";
             session_destroy();
+            
 
         }
     }
@@ -57,14 +59,12 @@ password:<br>   <input type="password" name="password"><br>
 <input type="submit" value="login">
 </div>
 </form>
-<h2  ><a style="color:white;" href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
-<h2  >></h2>
+<h2 style="background-color:red; color: black;"><a  href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
 
 ';}
 
 ?>
-<h2>Why the name "Trekenerator"</h2>
-<p>the name trekenerator comes form the fact that this website's goal it to generate treks automaticaly thus the name "trekenerator"</p>
+
 
 </body>
 </html>

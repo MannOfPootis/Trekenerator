@@ -4,15 +4,18 @@
 <?php
 include "../check/config.php";
 include '../nav.php';
-//$poster= $conn->query("SELECT id FROM account WHERE username = '$username' ")->fetch_object()->id;
-//$locations=mysqli_query($conn,"SELECT * FROM location ");
-//echo "$locations";
-
-//$works=$_SESSION["works"];
-//echo "$works";
+?>
+<html>
+    <head>
+    <link rel="stylesheet" href="../trekstil.css">
+    </head>
+<body  >
+<div class="pathBackground">
+    <div class='window2'>
+<h1>Add a path</h1><br>
+<?php
 if(array_key_exists("name",$_POST))
 {
-    //echo "<h1>less go</h1>";
     $name= $_POST["name"];
     $location1 = $_POST["location1"];
     $location2 = $_POST["location2"];
@@ -27,31 +30,23 @@ if(array_key_exists("name",$_POST))
         $comment = "0";
     }
     $poster= $conn->query("SELECT id FROM account WHERE username = '$username' ")->fetch_object()->id;
-    echo "$poster";
+    //echo "$poster";
     //$poster = 3;
     if($conn->query("SELECT name from path where name='$name'")->num_rows>0)
         {
-            echo "<br>wrong nejm<br>";
+            echo "<h1 style=' color : red;'>napačno ime</h1>";
         }
         else
         {
-            echo "<br>$poster";
             $conn->query("INSERT INTO path(name,length, location1,location2,comment,poster)
                                       Values ('$name','$length','$location1','$location2', '$comment','$poster')");
-            echo "<h1>submitted</h1>";
+            echo "<h1 style=' color : green;'>Dobra izbira</h1>";
         }
     
     //$sql = "INSERT INTO account(name  ,height  ,poster   ,password)
      //   values('$firstname','$lastname','$username','$password')";
 }
-?>
-<html>
-    <head>
-    <link rel="stylesheet" href="../trekstil.css">
-    </head>
-<body>
-<?php ?>
-<h1>add a path</h1>
+?><br>
 <form action =""method ="post">
     start locaton:<select name ="location1">
     <?php 
@@ -92,6 +87,7 @@ if(array_key_exists("name",$_POST))
     any comments?<input type= "text" name ="comment"><br>
     <input type ="submit">
 </form>
-
+</div>
+</div>
 </body>
 </html>
