@@ -35,7 +35,7 @@
     
     </head>
 <body class = "backstil">
-  <ul class ="nav">
+  <ul class ="navl">
         <li><a class = loc href = "http://localhost/trekenerator/trekenerator/mainPage.php">Home page</a></li>
   <li><a class = "loc" href="http://localhost/trekenerator/trekenerator/add/location.php">Add a location</a></li>
   <li><a class = "loc" href="http://localhost/trekenerator/trekenerator/add/path.php" > Add a path </a></li></li>
@@ -44,11 +44,11 @@
 
   <li class="account">
   <?php
-  session_start();
+    session_start();
   include "methods.php";
   include "check/config.php";
   if (isset($_SESSION['username'])){
-    $username =$_SESSION['username'];
+    $username =$_SESSION['username'];session_abort();
     $placeId= sqli_takefirst($conn->query("SELECT ID from account WHERE username ='$username'"));
     echo"<a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=account&ID=$placeId'>asdashdahh</a>";
   }

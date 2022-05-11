@@ -1,6 +1,6 @@
 <html>
     <head>
-            <link rel="stylesheet" href="../sus.css">
+            <link rel="stylesheet" href="../trekstil.css">
             <style>
 
                 div{
@@ -21,7 +21,7 @@
         <h1>welcome to the first trekenerator made by me</h1>
         <?php
         include "../check/config.php";
-        include "../check/login.php";
+        include "../nav.php";
         if(isset($_GET["thing"])&&isset($_GET["ID"])){
             $ID=$_GET["ID"];
             $topic =$_GET["thing"];
@@ -85,11 +85,14 @@
                        }break;
                 case "account":
                     $Account_sqli=$conn->query("SELECT* from account  WHERE id='$ID'");
-                    while($Accray=mysqli_fetch_array(
+                    if($Accray=mysqli_fetch_array(
                         $Account_sqli,MYSQLI_ASSOC))
                         $firstname=$Accray["first_name"];
                         $lastname=$Accray["last_name"];
                         $username=$Accray["username"];
+                        if($username == $_SESSION['username']){
+                            echo'<a href="http://localhost/trekenerator/trekenerator/modularLogout.php"> logout?</a>';
+                        }
                         echo"<div>
                         $username<br>
                         $firstname<br>

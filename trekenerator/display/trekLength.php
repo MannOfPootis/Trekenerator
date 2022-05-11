@@ -3,7 +3,9 @@
 ?>
 <html>
     <head>
+    <link rel="stylesheet" href="../trekstil.css">
         <style>
+            
             form{
                 background-color:gray;
                 width: fit-content;
@@ -15,7 +17,7 @@
 
 <?php
 include "../check/config.php";
-include "../check/login.php";
+include "../nav.php";
 ?>
 <p class ="line"></p>
 <form action = "http://localhost/trekenerator/trekenerator/display/trekenerated.php" method = "post"> 

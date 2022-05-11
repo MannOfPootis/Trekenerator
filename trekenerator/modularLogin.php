@@ -45,7 +45,7 @@ if(
 <br>
 
 <?php
-//if( !array_key_exists( "username",$_SESSION))
+if( !array_key_exists( "username",$_SESSION))
 {
 echo'
 <form action="" method="post">

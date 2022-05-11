@@ -3,7 +3,7 @@
 ?>
 <?php
 include "../check/config.php";
-include "../check/login.php";
+include '../nav.php';
 //$poster= $conn->query("SELECT id FROM account WHERE username = '$username' ")->fetch_object()->id;
 //$locations=mysqli_query($conn,"SELECT * FROM location ");
 //echo "$locations";
@@ -46,12 +46,12 @@ if(array_key_exists("name",$_POST))
 }
 ?>
 <html>
+    <head>
+    <link rel="stylesheet" href="../trekstil.css">
+    </head>
 <body>
-
+<?php ?>
 <h1>add a path</h1>
-<a href="http://localhost/trekenerator/trekenerator/signup.php">go to signup </a>
-<a href="http://localhost/trekenerator/trekenerator/mainPage.php">gsag</a>
-
 <form action =""method ="post">
     start locaton:<select name ="location1">
     <?php 

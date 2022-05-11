@@ -3,6 +3,7 @@
 ?>
 <html>
 <head>
+<link rel="stylesheet" href="../trekstil.css">
         <style>
             form{
                 background-color:gray;
@@ -24,8 +25,9 @@
 <body>
 
 <?php
+
 include "../check/config.php";
-include "../check/login.php";
+include "../nav.php";
 $allp=$conn->query("select * from path where location1 != location2 
 order by RAND()
 limit 1

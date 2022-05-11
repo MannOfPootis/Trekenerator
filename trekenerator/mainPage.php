@@ -1,14 +1,14 @@
 
-<?php
-include "nav.php";
-?>
+
 <html>
     <head>
         <link rel="stylesheet" href="trekstil.css">
 
     </head>
 <body class = "backstil">
-
+<?php
+include "nav.php";
+?>
 <div class= "mainBackground">
   
 <div class = "window">

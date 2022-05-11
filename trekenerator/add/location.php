@@ -1,6 +1,7 @@
 
 <?php
 include "../check/config.php";
+include '../nav.php';
 ?>
 <?php
 include "../check/login.php";
@@ -47,15 +48,16 @@ if(array_key_exists("name",$_POST))
 <html>
 <head>
     <link rel="stylesheet" href="../trekstil.css">
-
+    
 </head>
 <body>
 
 <div class ="locationBackground">
-  <div class ="window">
-  <h1>adding locations</h1>
+  <div class ="window2">
+  <h1>Adding locations</h1><br>
   <p>locations need to be added to the database so that it can function properly so.. pick a location you have been to and add it to the database. perhaps it is a hill you have been on or a town. Whatever it is fell free to add it to our ever expanding library</p>
-<form action =""method ="post">
+<br>
+  <form action =""method ="post">
 
   <h2>Add a location</h2>
     name:<br><input type="text" name="name"><br>

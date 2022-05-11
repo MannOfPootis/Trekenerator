@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="sus.css">
+        <link rel="stylesheet" href="../trekstil.css">
         <style>
 
             div{
@@ -64,8 +64,8 @@ window.testI = function(k,l,name) {
     </head>
 <body>
 
-<h1>welcome to the first trekenerator made by me</h1>
 <?php
+include "../nav.php";
 //include "modularLogin.php";
 include "../check/config.php";
 include "../check/login.php";
@@ -113,11 +113,8 @@ while($place = mysqli_fetch_array(
 
 &nbsp;
 </div>
-<?php
 
-echo "<script>testI('1','10');</script>";
-?>
-<input type="button" onclick="testIt();" value="Draw Line" />
+
 
 
 
