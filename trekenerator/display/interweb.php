@@ -51,7 +51,7 @@ function getOffset( el ) {
 window.testI = function(k,l,name) {
     var div1 = document.getElementById(k);
     var div2 = document.getElementById(l);
-    connect(div1, div2, "rgba(247, 247, 247, 0.562)", 10,name);
+    connect(div1, div2, "rgba(250, 15, 15, 0.459)", 10,name);
 }
 
 

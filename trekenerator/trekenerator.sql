@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2022 at 04:53 AM
+-- Generation Time: May 11, 2022 at 10:17 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -40,9 +40,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `password`, `first_name`, `last_name`) VALUES
-(8, '123', '$2y$10$3ok0sqLqQiEgINZjlEyG9u1V0qKr9CDxtIhOP8UZfX7bnSZhStUjW', '123', '123'),
-(9, '1234', '$2y$10$0yKoKz2bkplim80.lqf0AOBPBbkX4lY860hZae6HXXiQ9fWFLVWFS', '1234', '1234'),
-(10, 'LIGMA', '$2y$10$ksWe58sdidWQev1MSni/nOsM.MxHZDryni7lcDvbtla94Vkj71ZBO', 'JOE', 'MAMA');
+(13, 'ligma', '$2y$10$FMBqP9ItieXWE1Jv3Z/8tOn5l2/NuuBwo4bTfV.Bxxt9bfeLbcB.m', 'christ', 'jesus'),
+(14, 'bad', '$2y$10$ydIxlR611ov6rA5UQ4opYe0etIp0DMyXFCpVLIsizkmh3DdU6Zk9W', 'guge', 'your');
 
 -- --------------------------------------------------------
 
@@ -77,16 +76,15 @@ CREATE TABLE `location` (
 --
 
 INSERT INTO `location` (`id`, `name`, `height`, `poster`, `comment`) VALUES
-(1, '123', 123, 3, ''),
-(2, 'a place', 1233, 3, 'my balls itch'),
-(3, '123222', 1111, 3, 'sdasxx'),
-(4, '1232222', 111, 3, 'sadxxx'),
-(5, 'lick', 0, 3, ''),
-(6, '123sss', 1222, 3, 'my balls itch'),
-(7, '2122ssss', 1233, 3, 'xx'),
-(8, '1223xxxxx', 0, 3, 'sex'),
-(9, 'Ursla gora', 1800, 5, 'is nice'),
-(10, 'velenje', 300, 5, 'veleje');
+(17, 'database', 0, 13, 'this is the database'),
+(18, 'home page', 0, 13, 'this is the home page'),
+(19, 'dodajanje lokacij', 0, 13, 'tukaj se dodajajo lokacije'),
+(20, 'dodajanje poti', 0, 13, 'tukaj se dodajajo poti'),
+(21, 'trekeneracija', 0, 13, 'tukaj se generirajo poti'),
+(25, 'sprememba gesla', 0, 13, 'tukaj si uporabnik spremeni geslo'),
+(27, 'vpisan na home page', 0, 13, ''),
+(28, 'prikaz informacij', 0, 13, 'prikaz informacij'),
+(29, 'prikaz trekeneriranje poti', 0, 13, 'tukaj se prikaže trekenerirana pot');
 
 -- --------------------------------------------------------
 
@@ -109,19 +107,13 @@ CREATE TABLE `path` (
 --
 
 INSERT INTO `path` (`id`, `name`, `length`, `location1`, `location2`, `poster`, `comment`) VALUES
-(1, 'xxx', 0, 1, 1, 3, 'sss'),
-(2, 'sssxxxxx', 12345, 1, 7, 3, 'no'),
-(3, 'xxxx', 12232, 1, 7, 3, 'my balls itch'),
-(4, 'you will die', 10000, 1, 7, 5, 'no'),
-(5, 'janez', 20000, 10, 9, 5, 'sussy buku'),
-(6, 'path1', 230, 5, 9, 5, ''),
-(7, 'susy', 2341, 10, 2, 5, ''),
-(8, 'no', 12, 1, 2, 5, ''),
-(9, '23', 23, 2, 3, 5, ''),
-(10, '34', 34, 3, 4, 5, ''),
-(11, '45', 45, 4, 5, 5, ''),
-(12, '56', 56, 5, 6, 5, ''),
-(13, '78', 78, 7, 8, 5, '');
+(19, 'vpis', 1, 18, 27, 13, 'uporabnik se vpiše in s tem dobi dostop do drugih funkcij spletne strani'),
+(20, 'klik na dodajanje poti', 0, 27, 20, 13, 'na dodajanju poti lahko uporanik doda pot ki se shrani v podatkovno bazo  tam se shrani začetna lokacija, končna lokacija in uporabnik ki jo je nastavil'),
+(21, 'klik na dodajanje lokacij', 1, 27, 19, 13, 'na dodajanju lokacij lahko uporabnik doda  določeno lokacijo v podatkovno bazo kjer se tudi shrani kdo je nastavil to lokacijo'),
+(22, 'klik na trekeneracijo', 1, 27, 21, 13, 'ob kliku uporabniku ponudi možnost vpisa dolžine poti '),
+(23, 'prenos informacij z post', 1, 21, 29, 13, 'z post se prenesejo informacije na naslednjo stran'),
+(24, 'klik na uporabniško ime', 1, 27, 28, 13, 's klikom na uporabniško ime lahko uporabnika poese na prikaz informacij  z get se prenesejo informacije o točno čemj naj prenese'),
+(25, 'klik na link', 2, 28, 25, 13, 'če ste vpisani v račun, ki ga gledate lahko kliknete na povezavo ki vas bo vodila do  lokacije kjer si lahko spremenite geslo');
 
 --
 -- Indexes for dumped tables
@@ -165,25 +157,25 @@ ALTER TABLE `path`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `path`
 --
 ALTER TABLE `path`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables

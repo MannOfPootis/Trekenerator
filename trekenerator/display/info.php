@@ -39,7 +39,7 @@
                            else{
                             $placeComment= "none";
                            }
-                           echo "<div
+                           echo "<br><br><br><br><br><br><br><br><div
                            class = '' id='$placeId'>
                                <h1>$placeName</h1><br>
                             <p>$placeComment</p><br>
@@ -67,7 +67,9 @@
                            else{
                             $placeComment= "none";
                            }
-                           echo "<div
+                           echo "
+                           <br><br><br><br><br><br>
+                           <div
                            class = '' id='$placeId'>
                                <h1>$placeName</h1><br>
                                <p>$placeComment</p><h2>

@@ -59,7 +59,7 @@ password:<br>   <input type="password" name="password"><br>
 <input type="submit" value="login">
 </div>
 </form>
-<h2 style="background-color:red; color: black;"><a  href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
+<h2 style="background-color:brown; color: black;"><a  href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
 
 ';}
 
