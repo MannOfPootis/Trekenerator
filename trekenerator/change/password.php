@@ -8,7 +8,6 @@
     </head>
 <body>
     <script type="text/javascript">
-        //function submitcheck
         function checkok(){
             var password = document.getElementById("password");
             var password1 = document.getElementById("password1");
@@ -18,14 +17,11 @@
             else{
                 document.getElementById("problem").innerHTML="isok";
             }
-            //document.getElementById("problem").innerHTML=password.value;
         }
     </script>
 <?php
-//session_start();
 include "../check/config.php";
 include "../nav.php";
-//include "../methods.php";
 
 ?>
 <div class = "trekeneratorBackground">

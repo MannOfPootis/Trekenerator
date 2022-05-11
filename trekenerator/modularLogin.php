@@ -17,8 +17,6 @@
 <body>
 
 <?php
-/*include "check/config.php";
-include "methods.php";*/
 if(
     array_key_exists( "username",$_POST)&&
     array_key_exists( "password",$_POST)
@@ -29,7 +27,7 @@ if(
         $gotten_password=sqli_takefirst($conn->query("SELECT password from account where username ='$username'"));
         if(password_verify($password, $gotten_password))
         {
-            //echo "it should work";
+
             $_SESSION["username"]=$username;
             header('Refresh: 0');
 
@@ -41,7 +39,6 @@ if(
 
         }
     }
-    //session_abort();
 ?>
 
 <br>

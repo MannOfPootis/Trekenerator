@@ -7,8 +7,6 @@ include '../nav.php';
 include "../check/login.php";
 $poster= $conn->query("SELECT id FROM account WHERE username = '$username' ")->fetch_object()->id;
 
-//$works=$_SESSION["works"];
-//echo "$works";
 if(array_key_exists("name",$_POST))
 {
     $name= $_POST["name"];
@@ -34,15 +32,13 @@ if(array_key_exists("name",$_POST))
     echo "$poster";
     if($conn->query("SELECT name from location where name='$name'")->num_rows>0)
         {
-            echo "<br>wrong nejm<br>";
+            echo "<br>name taken<br>";
         }else
         {
             $conn->query("INSERT INTO location(name, height,poster,comment)
                                     Values ('$name','$height','$poster','$comment')");
         }
 
-    //$sql = "INSERT INTO account(name  ,height  ,poster   ,password)
-     //   values('$firstname','$lastname','$username','$password')";
 }
 ?>
 <html>

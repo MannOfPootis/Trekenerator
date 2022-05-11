@@ -48,9 +48,6 @@ while ($allpArray=mysqli_fetch_array($allp)){
     $real =0;
     $sum=0;
     while($real<$goal){
-        //$real=$path[$dex]->fetch_object()->length;
-        //$start= $path[$dex]->fetch_object()->location2;
-       
         $why=$path[$dex]->fetch_object();
         $start =$why->location1;
         $end = $why->location2;
@@ -58,32 +55,15 @@ while ($allpArray=mysqli_fetch_array($allp)){
         $real+= $length;
         $nameStart=sqli_takefirst($conn->query("SELECT name FROM location where id ='$start'"));
         $nameEnd=sqli_takefirst($conn->query("SELECT name FROM location where id ='$end'"));
-        //$end=$path[$dex]->fetch_object()->location2;
-        //$startName=$path[$dex]->fetch_object()->comment;
         echo "<br>
         <p>we start at <i>$nameStart</i> for $length m  and end at <i>$nameEnd</i></p><br>";
         $sum+=$length;
-        //$start = 5;
         $dex++;
-        
-        //echo $start;
         $path[$dex]=$conn->query("select * from path where location1 != location2 and location1=$start or location2=$start
         order by RAND()
         limit 1");
-        //$real++;
-        //$goal=-1;
     }
     echo "for a total of $sum meters";
-    /*foreach($path as $ligma){
-        //$pathlist= mysqli_fetch_array($ligma);
-        //$name=$pathlist['name'];
-        //$location1=$pathlist['location1'];
-        $name = $ligma->fetch_object()->name;
-        $location1 = $ligma->fetch_object()->location1;
-
-        echo "<p>$name  $location1</p><br>";
-    
-    }*/
 ?>
 </div>
 

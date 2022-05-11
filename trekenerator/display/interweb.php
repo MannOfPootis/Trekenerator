@@ -6,7 +6,7 @@
             
         </style> 
         <script>
-            function connect(div1, div2, color, thickness,name) {//this javascript code is from  the web note to make it in php and ore use this:https://web.archive.org/web/20130108020533/http://blog.stephenboak.com:80/2012/06/15/d3-flow-vis-tutorial.html
+            function connect(div1, div2, color, thickness,name) {
     var off1 = getOffset(div1);//the code was shamelessly nicked from https://thewebdev.info/2021/09/12/how-to-draw-a-line-between-two-divs-with-javascript/
     var off2 = getOffset(div2);
     // bottom right
@@ -43,11 +43,7 @@ function getOffset( el ) {
     };
 }
 
-/*window.testIt = function() {
-    var div1 = document.getElementById('div2');
-    var div2 = document.getElementById('1');
-    connect(div1, div2, "rgba(247, 247, 247, 0.562)", 10);
-}*/
+
 window.testI = function(k,l,name) {
     var div1 = document.getElementById(k);
     var div2 = document.getElementById(l);

@@ -30,8 +30,7 @@ if(array_key_exists("name",$_POST))
         $comment = "0";
     }
     $poster= $conn->query("SELECT id FROM account WHERE username = '$username' ")->fetch_object()->id;
-    //echo "$poster";
-    //$poster = 3;
+
     if($conn->query("SELECT name from path where name='$name'")->num_rows>0)
         {
             echo "<h1 style=' color : red;'>napačno ime</h1>";
@@ -42,9 +41,6 @@ if(array_key_exists("name",$_POST))
                                       Values ('$name','$length','$location1','$location2', '$comment','$poster')");
             echo "<h1 style=' color : green;'>Dobra izbira</h1>";
         }
-    
-    //$sql = "INSERT INTO account(name  ,height  ,poster   ,password)
-     //   values('$firstname','$lastname','$username','$password')";
 }
 ?><br>
 <form action =""method ="post">
