@@ -2,14 +2,7 @@
 include "../check/config.php";
 include "../methods.php";
 //include "../check/login.php";
-echo "hello world";
-$is_page_refreshed = (isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] == 'max-age=0');
-if($is_page_refreshed ) {
-  echo 'This Page Is refreshed.';
-} else {
-  echo 'This page is first time visited. Not refreshed.';
-}
-    if(isset($_POST["comment"])&& $_SESSION['coom'] !=$_POST["comment"]){
+    if(isset($_POST["comment"])&& ($_SESSION['comment'] !=$_POST["comment"]||!isset($_SESSION['comment']))){
     if(strlen($_POST["comment"])>1)
     {
         $comment=$_POST["comment"];
@@ -21,7 +14,7 @@ if($is_page_refreshed ) {
         $conn->query("INSERT INTO comment(poster,text,topic,towards)
         values('$idUser','$comment','$topic','$idObject')
         ");
-        $_SESSION['coom']=$comment;
+        $_SESSION['comment']=$comment;
         $_POST = array();
     }
     

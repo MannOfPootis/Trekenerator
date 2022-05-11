@@ -58,7 +58,6 @@
                     
                    // $row = mysql_fetch_row($res);
                    $allPlaces=$conn->query("SELECT* from path  WHERE id='$ID' ");
-                   $sus=0;
                    while($place = mysqli_fetch_array(
                        $allPlaces,MYSQLI_ASSOC)){
                            $placeName=$place["name"];
@@ -84,6 +83,24 @@
                            </div>";
                    
                        }break;
+                case "account":
+                    $Account_sqli=$conn->query("SELECT* from account  WHERE id='$ID'");
+                    while($Accray=mysqli_fetch_array(
+                        $Account_sqli,MYSQLI_ASSOC))
+                        $firstname=$Accray["first_name"];
+                        $lastname=$Accray["last_name"];
+                        $username=$Accray["username"];
+                        echo"<div>
+                        $username<br>
+                        $firstname<br>
+                        $lastname<br>
+                        <a href ='http://localhost/trekenerator/trekenerator/change/password.php'> change password?</a>
+                        
+                        </div>";
+                        
+
+
+                
             }
         }
         include "../commenting/commentPath.php";

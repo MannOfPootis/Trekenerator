@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 ?>
 <html>
 <head>
@@ -17,8 +17,8 @@ session_start();
 <body>
 
 <?php
-include "check/config.php";
-include "methods.php";
+/*include "check/config.php";
+include "methods.php";*/
 if(
     array_key_exists( "username",$_POST)&&
     array_key_exists( "password",$_POST)
@@ -45,7 +45,8 @@ if(
 <br>
 
 <?php
-if( !array_key_exists( "username",$_SESSION)){
+//if( !array_key_exists( "username",$_SESSION))
+{
 echo'
 <form action="" method="post">
 
@@ -57,7 +58,7 @@ password:<br>   <input type="password" name="password"><br>
 </div>
 </form>
 <h2  ><a style="color:white;" href="http://localhost/trekenerator/trekenerator/signup.php">Sign Up</a></h2>
-<h2  ><a style="color:white;" href="http://localhost/trekenerator/trekenerator/change/password.php">Sign Up</a></h2>
+<h2  >></h2>
 
 ';}
 

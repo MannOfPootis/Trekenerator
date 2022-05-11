@@ -21,7 +21,10 @@
  
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: -10;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -40,10 +43,19 @@
   <li><a class = loc href = "http://localhost/trekenerator/trekenerator/display/interweb.php">Interweb</a></li>
 
   <li class="account">
-  <div class="tooltip">Hover over me        <br>
-  <div class="tooltiptext"><a href="http://localhost/trekenerator/trekenerator/change/password.php">change password</a></span>
+  <?php
+  session_start();
+  include "methods.php";
+  include "check/config.php";
+  if (isset($_SESSION['username'])){
+    $username =$_SESSION['username'];
+    $placeId= sqli_takefirst($conn->query("SELECT ID from account WHERE username ='$username'"));
+    echo"<a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=account&ID=$placeId'>asdashdahh</a>";
+  }
   
-</div></li>
+  
+  ?>
+  </li>
 </ul>
 
 
