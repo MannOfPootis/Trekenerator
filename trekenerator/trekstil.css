@@ -127,6 +127,25 @@ form{
    height: 100vh;
 
 }
+.trekeneratedBackground{
+  background-image:url('images/background trekenerated.jpeg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 100vh;
+   max-height: fit-content;
+}
+.interwebBackground{
+  background-image:url('images/background interweb.jpeg');
+  background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 100vh;
+   max-height: fit-content;
+
+}
 .grassyBackground{
   background-image:url('images/background grassy.jpg');
   background-attachment: fixed;

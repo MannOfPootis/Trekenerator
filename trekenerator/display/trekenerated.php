@@ -23,7 +23,7 @@
         </script>
     </head>
 <body>
-<div class ="grassyBackground">
+<div class ="trekeneratedBackground">
 <?php
 
 include "../check/config.php";

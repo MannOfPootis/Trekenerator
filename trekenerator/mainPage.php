@@ -16,6 +16,7 @@ include "nav.php";
 <h2>Why the name "Trekenerator"</h2>
 <br>
 <p>the name trekenerator comes form the fact that this website's goal it to generate treks automaticaly thus the name "trekenerator"</p>
+<p>you also need to be signed in to accses most of the functions</p>
 <?php
 include "modularLogin.php";
 ?>
