@@ -3,8 +3,8 @@
             <link rel="stylesheet" href="../trekstil.css">
             <style>
 
-                
-            </style> 
+
+            </style>
         <script>
 
 
@@ -14,18 +14,18 @@
     </head>
     <body>
 
-        
+
         <?php
         include "../check/config.php";
         include "../nav.php";?>
         <div class= "infoBackground">
             <div class="window2">
-        
+
         <?php
         if(isset($_GET["thing"])&&isset($_GET["ID"])){
             $ID=$_GET["ID"];
             $topic =$_GET["thing"];
-            switch ($topic) 
+            switch ($topic)
             {
                 case "location":
                    $allPlaces=$conn->query("SELECT* from location WHERE id='$ID' ");
@@ -43,15 +43,15 @@
                            class = '' id='$placeId'>
                                <h1>$placeName</h1><br>
                             <p>$placeComment</p><br>
-                               
+
 
                            </div>";
-                   
+
                        }break;
                 case "path":
-                    
-                    
-                    
+
+
+
                    // $row = mysql_fetch_row($res);
                    $allPlaces=$conn->query("SELECT* from path  WHERE id='$ID' ");
                    while($place = mysqli_fetch_array(
@@ -60,8 +60,8 @@
                            $placeId=$place["id"];
                            $placeStart=$place["location1"];
                            $placeEnd=$place["location2"];
-                           
-                           
+
+
                            if(strlen($place["comment"])>2){
                            $placeComment=$place["comment"];}
                            else{
@@ -74,11 +74,11 @@
                                <h1>$placeName</h1><br>
                                <p>$placeComment</p><h2>
                                <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeStart'>this is the start<a> <br><br>
-                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeEnd'>this is the end<a>    </h2>                        
+                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeEnd'>this is the end<a>    </h2>
 
 
                            </div>";
-                   
+
                        }break;
                 case "account":
                     $Account_sqli=$conn->query("SELECT* from account  WHERE id='$ID'");
@@ -95,12 +95,12 @@
                         <p>$firstname<br>
                         $lastname</p><br>
                         <a href ='http://localhost/trekenerator/trekenerator/change/password.php'> change password?</a>
-                        
+
                         </div>";
-                        
 
 
-                
+
+
             }
         }
         include "../commenting/commentPath.php";
@@ -110,7 +110,7 @@
                 $posterId=$comment["poster"];
                 $text =$comment["text"];
                 $postername= sqli_takefirst($conn->query("SELECT username from account where id = '$posterId'"));
-                echo"<p><b>$postername says:</b> $text </p>";
+                echo"<center><p class='coom'><b>$postername says:</b> $text </p></center>";
             }
     ?>
     </div>

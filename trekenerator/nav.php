@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="trekstil.css">
         <style>
 </style>
-    
+
     </head>
 <body class = "backstil">
   <ul class ="navl">
@@ -15,16 +15,16 @@
 
   <li class="account">
   <?php
-    session_start();
   include "methods.php";
   include "check/config.php";
+  include "check/login.php";
   if (isset($_SESSION['username'])){
-    $username =$_SESSION['username'];session_abort();
+    $username =$_SESSION['username'];
     $placeId= sqli_takefirst($conn->query("SELECT ID from account WHERE username ='$username'"));
     echo"<a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=account&ID=$placeId'>$username</a>";
   }
-  
-  
+
+
   ?>
   </li>
 </ul>

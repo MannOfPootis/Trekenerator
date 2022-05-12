@@ -2,9 +2,8 @@
 include "../check/config.php";
 //include "../methods.php";
 //include "../check/login.php";
-session_start();
 if(!isset($_SESSION['comment'])){
-    $_SESSION['comment']='x';
+    $_SESSION['comment']='';
 }
 
     if($_GET['thing']!='account'&&isset($_POST["comment"])&& $_SESSION['comment'] !=$_POST["comment"])
@@ -24,21 +23,18 @@ if(!isset($_SESSION['comment'])){
           }
     }
     $_SESSION['comment']=$comment;
+    echo "$comment";
 }
- 
-
-
-
 ?>
 <html>
     <head>
         <style>
-            
+
         </style>
     </head>
 <body>
     <script type="text/javascript">
-        
+
     </script>
     <?php
     if($_GET['thing']!='account')
@@ -46,9 +42,9 @@ if(!isset($_SESSION['comment'])){
     echo'
 <div class = "box">
 <form action="" method="post">
-<input type ="text" name="comment"/>
-<input type="submit" >
-<div id ="problem"></div>
+<textarea name="comment" id="comments" >
+</textarea><br>
+<input type="submit" value="comment" >
 </div>';}?>
 </form>
 

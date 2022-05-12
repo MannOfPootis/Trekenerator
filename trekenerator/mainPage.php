@@ -10,7 +10,7 @@
 include "nav.php";
 ?>
 <div class= "mainBackground">
-  
+
 <div class = "window">
 <h1>Welcome to the first Trekenerator made by me</h1><br>
 <h2>Why the name "Trekenerator"</h2>

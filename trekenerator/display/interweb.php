@@ -3,18 +3,18 @@
         <link rel="stylesheet" href="../trekstil.css">
         <style>
 
-            
-        </style> 
+
+        </style>
         <script>
             function connect(div1, div2, color, thickness,name) {
     var off1 = getOffset(div1);//the code was shamelessly nicked from https://thewebdev.info/2021/09/12/how-to-draw-a-line-between-two-divs-with-javascript/
     var off2 = getOffset(div2);
     // bottom right
-    var x1 = off1.left + off1.width;
-    var y1 = off1.top + off1.height;
+    var x1 = off1.left + off1.width/2;
+    var y1 = off1.top + off1.height/2;
     // top right
-    var x2 = off2.left + off2.width;
-    var y2 = off2.top;
+    var x2 = off2.left + off2.width/2;
+    var y2 = off2.top+ off1.height/2;
     // distance
     var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
     // center
@@ -25,12 +25,12 @@
     // make hr
     var htmlLine = "<a  href=http://localhost/trekenerator/trekenerator/display/info.php?thing=path&ID="+ name+" style='padding:0px; margin:0px; height:" + thickness +
      "px; background-color:" + color +
-      "; line-height:1px; position:absolute; left:" + cx + 
-      "px; top:" + cy + 
+      "; line-height:1px; position:absolute; left:" + cx +
+      "px; top:" + cy +
       "px; width:" + length +"px; -moz-transform:rotate(" + angle + "deg);-webkit-transform:rotate(" + angle + "deg); -o-transform:rotate(" + angle + "deg); -ms-transform:rotate(" + angle + "deg); transform:rotate(" + angle + "deg);' ></a>";
     //
     //alert(htmlLine);
-    document.body.innerHTML += htmlLine; 
+    document.body.innerHTML += htmlLine;
 }
 
 function getOffset( el ) {
@@ -72,9 +72,9 @@ while($place = mysqli_fetch_array(
         $randy=rand(10,80);
         echo "<div style='position: absolute;
         left: $randx%;
-        top: $randy%' 
+        top: $randy%'
          id='$placeId'><p>
-            <a href='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeId'>
+            <a style='background-color:rgba(255,255,255,1); z-index:5;' href='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeId'>
                 $placeName
             </a></p>
         </div>";//TO DO: add math to calc angles
