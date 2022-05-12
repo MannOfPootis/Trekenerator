@@ -23,7 +23,6 @@ if(!isset($_SESSION['comment'])){
           }
     }
     $_SESSION['comment']=$comment;
-    echo "$comment";
 }
 ?>
 <html>
@@ -40,12 +39,10 @@ if(!isset($_SESSION['comment'])){
     if($_GET['thing']!='account')
     {
     echo'
-<div class = "box">
 <form action="" method="post">
-<textarea name="comment" id="comments" >
+<textarea class="textcoom" name="comment" id="comments" placeholder="any comments?" >
 </textarea><br>
-<input type="submit" value="comment" >
-</div>';}?>
+<input type="submit" value="comment" >';}?>
 </form>
 
 </body>

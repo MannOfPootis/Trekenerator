@@ -43,6 +43,12 @@ p{
   background-color: rgba(255,255,255,0.3);
   word-wrap: break-word;
 }
+.textcoom{
+  width:70vw;
+  height:10vh;
+
+
+}
 ul {
 
   list-style-type: none;
@@ -168,7 +174,7 @@ form{
   width:wrap-content ;
   height: max-content;
   width:max-content;
-  padding:2%;
+  padding:0.9em;
   margin:auto;
 
 }

@@ -23,7 +23,7 @@
     // angle
     var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
     // make hr
-    var htmlLine = "<a  href=http://localhost/trekenerator/trekenerator/display/info.php?thing=path&ID="+ name+" style='padding:0px; margin:0px; height:" + thickness +
+    var htmlLine = "<a  href=http://localhost/trekenerator/trekenerator/display/info.php?thing=path&ID="+ name+" style='padding:0px; margin:0px;  z-index: 1; height:" + thickness +
      "px; background-color:" + color +
       "; line-height:1px; position:absolute; left:" + cx +
       "px; top:" + cy +
@@ -72,9 +72,10 @@ while($place = mysqli_fetch_array(
         $randy=rand(10,80);
         echo "<div style='position: absolute;
         left: $randx%;
-        top: $randy%'
+        top: $randy%;
+        z-index: 2;'
          id='$placeId'><p>
-            <a style='background-color:rgba(255,255,255,1); z-index:5;' href='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeId'>
+            <a style='background-color:rgba(255,255,255,1);' href='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeId'>
                 $placeName
             </a></p>
         </div>";//TO DO: add math to calc angles

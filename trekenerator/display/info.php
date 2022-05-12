@@ -53,14 +53,15 @@
 
 
                    // $row = mysql_fetch_row($res);
-                   $allPlaces=$conn->query("SELECT* from path  WHERE id='$ID' ");
+                   $allPlaces=$conn->query("SELECT* from path  WHERE id='$ID'");
                    while($place = mysqli_fetch_array(
                        $allPlaces,MYSQLI_ASSOC)){
                            $placeName=$place["name"];
                            $placeId=$place["id"];
                            $placeStart=$place["location1"];
                            $placeEnd=$place["location2"];
-
+                            $nameStart=sqli_takefirst($conn->query("SELECT name from location where id='$placeStart'"));
+                            $nameEnd=sqli_takefirst($conn->query("SELECT name from location where id='$placeEnd'"));
 
                            if(strlen($place["comment"])>2){
                            $placeComment=$place["comment"];}
@@ -73,8 +74,8 @@
                            class = '' id='$placeId'>
                                <h1>$placeName</h1><br>
                                <p>$placeComment</p><h2>
-                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeStart'>this is the start<a> <br><br>
-                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeEnd'>this is the end<a>    </h2>
+                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeStart'>starts at $nameStart<a> <br><br>
+                               <a href ='http://localhost/trekenerator/trekenerator/display/info.php?thing=location&ID=$placeEnd'>ends at $nameEnd<a>    </h2>
 
 
                            </div>";
@@ -87,16 +88,19 @@
                         $firstname=$Accray["first_name"];
                         $lastname=$Accray["last_name"];
                         $username=$Accray["username"];
-                        if($username == $_SESSION['username']){
-                            echo'<br><br><br><br><br><br><a href="http://localhost/trekenerator/trekenerator/modularLogout.php"> logout?</a>';
-                        }
+                        
                         echo"<div>
-                        <h1>$username</h1>
-                        <p>$firstname<br>
-                        $lastname</p><br>
-                        <a href ='http://localhost/trekenerator/trekenerator/change/password.php'> change password?</a>
+                        <br><br><br><br><br><br>
+                        <h1>$username</h1><br>
+                        <p>first name:<b> $firstname </b><br>
+                        last name:<b> $lastname </b></p><br>
+                        
 
                         </div>";
+                        if($username == $_SESSION['username']){
+                            echo'<p> this is your account</p><br>
+                             <a href ="http://localhost/trekenerator/trekenerator/change/password.php">change password?</a><a href="http://localhost/trekenerator/trekenerator/modularLogout.php"><p class ="logout">logout?<p></a>';
+                        }
 
 
 
